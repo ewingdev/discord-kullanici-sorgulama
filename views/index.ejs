@@ -1,0 +1,30 @@
+<%- include("./partials/header.ejs") %>
+    <%- include("./partials/loader.ejs") %>
+
+        <div class="container">
+            <div class="jumbotron bg-dark text-white mt-5">
+                <% if (error) { %>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong><%= error %></strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+                    </div>
+                    <% } %>
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="userid"><h3>Kullanıcı id giriniz! <i class="required" data-placement="right" title="Required">*</i></h3></label>
+                                <input type="text" class="form-control" id="userid" name="user" aria-describedby="help" autocomplete="off" required>
+
+                            </div>
+                            <button type="submit" class="btn btn-blurple rounded" style="width: 100% !important;">Gönder</button>
+                            <small id="info" class="form-text text-muted"><a href="https://instagram.com/ewingbaba">İnstagram</a></small>
+                        </form>
+            </div>
+        </div>
+        <script>
+            $(".required").tooltip();
+        </script>
+        </body>
+
+        </html>
